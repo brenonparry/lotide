@@ -1,17 +1,21 @@
 const eqArrays = function(arrX, arrY) {
-  if (arrX.toString() === arrY.toString()) {
+  if (arrX.length === arrY.length) {
+    for (let i = 0; i < arrX.length; i++) {
+      if (arrX[i] !== arrY[i]) {
+        return false
+      } 
+    }
     return true
-  } else {
-    return false
   }
+  return false
 }
 
-const assertArraysEqual = function(arrays, expected) {
-  if (arrays === expected) {
-    console.log(`Would you look at that?! ${arrays} === ${expected}, which can only mean these Arrays are the same!`);
+const assertArraysEqual = function(arrayOne, arrayTwo) {
+  if (eqArrays(arrayOne, arrayTwo) === true) {
+    console.log(`Would you look at that?! ${arrayOne} === ${arrayTwo}, which can only mean these Arrays are the same!`);
   } else {
-    console.log(`Shoot dang heck. Looks like ${arrays} !== ${expected}, back to the drawing board`);
+    console.log(`Shoot dang heck. Looks like ${arrayOne} !== ${arrayTwo}, back to the drawing board`);
   }
 };
 
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertArraysEqual([1, 2, 4], [1, 2, 3]);
