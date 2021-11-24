@@ -8,23 +8,24 @@ const assertEqual = function(actual, expected) {
 
 
 // const eqArrays = function(arrX, arrY) {
-//   for (let x = 0; x < arrX.length; x++) {
-//     for (let y = 0; y < arrY.length; y++) {
-//       if (arrX[x] === arrY[y]) {
-//         return true
-//       } else {
-//         return false
-//       }
-//     }
+//   if (arrX.toString() === arrY.toString()) {
+//     return true
+//   } else {
+//     return false
 //   }
 // }
 
 const eqArrays = function(arrX, arrY) {
-  if (arrX.toString() === arrY.toString()) {
+  if (arrX.length === arrY.length) {
+    for (let i = 0; i < arrX.length; i++) {
+      if (arrX[i] !== arrY[i]) {
+        return false
+      } 
+    }
     return true
-  } else {
-    return false
   }
+  return false
 }
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 4]), true);
+// assertEqual(eqArrays([1, 2, 3], [1, 2, "4"]), true);
+console.log(eqArrays([1, 2, 3, 4], [1, 2, 3, 4]))
