@@ -51,3 +51,5 @@ assertObjectsEqual(cd, dc); // ==> expecting TRUE
 console.log("\n____________________________________________________\n");
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertObjectsEqual(cd, cd2); // ==> expecting FALSE
+
+module.exports = assertObjectsEqual;

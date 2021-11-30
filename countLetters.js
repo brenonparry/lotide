@@ -49,3 +49,5 @@ const countLetters = function(string) {
 
 console.log(countLetters("Hey you over there"));
 console.log(countLetters("These pretzles are making me thirsty"))
+
+module.exports = countLetters;
