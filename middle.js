@@ -6,6 +6,9 @@ const assertArraysEqual = require('./assertArraysEqual');
 
 
 const middle = function(array) {
+  if (array.length === 2) {
+    return undefined
+  }
   let index = Math.floor((array.length / 2))
   let newArr = [];
   if (array.length > 2) {
